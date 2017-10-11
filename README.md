@@ -34,3 +34,5 @@ http://localhost:8083/api/events
 $ ng serve
 
 http://localhost:4200/
+
+...ng lint

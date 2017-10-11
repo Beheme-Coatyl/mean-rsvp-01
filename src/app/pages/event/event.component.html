@@ -26,8 +26,8 @@
       <!-- Event detail tab -->
       <app-event-detail *ngIf="utils.tabIs(tab, 'details')" [event]="event"></app-event-detail>
 
-      <!-- Event RSVP tab -->
-      <app-rsvp *ngIf="utils.tabIs(tab, 'rsvp')"></app-rsvp>
+      <!-- Event RSVP tab / content -->
+      <app-rsvp *ngIf="utils.tabIs(tab, 'rsvp')" [eventId]="event._id" [eventPast]="eventPast"></app-rsvp>
     </div>
   </ng-template>
 
