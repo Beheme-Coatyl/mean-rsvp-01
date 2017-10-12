@@ -1,34 +1,31 @@
 // src/app/app.module.ts
-
 import { BrowserModule, Title } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-
-import { AuthService } from './auth/auth.service';
-import { CallbackComponent } from './pages/callback/callback.component';
-
-import { HttpClientModule } from '@angular/common/http';
-
-import { ApiService } from './core/api.service';
-import { LoadingComponent } from './core/loading.component';
-
-import { DatePipe } from '@angular/common';
-import { UtilsService } from './core/utils.service';
-
-import { FilterSortService } from './core/filter-sort.service';
-import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './pages/admin/admin.component';
+import { ApiService } from './core/api.service';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './auth/auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CallbackComponent } from './pages/callback/callback.component';
+import { CreateEventComponent } from './pages/admin/create-event/create-event.component';
+import { DatePipe } from '@angular/common';
 import { EventComponent } from './pages/event/event.component';
 import { EventDetailComponent } from './pages/event/event-detail/event-detail.component';
+import { EventFormComponent } from './pages/admin/event-form/event-form.component';
+import { FilterSortService } from './core/filter-sort.service';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './pages/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoadingComponent } from './core/loading.component';
+import { NgModule } from '@angular/core';
 import { RsvpComponent } from './pages/event/rsvp/rsvp.component';
 import { RsvpFormComponent } from './pages/event/rsvp/rsvp-form/rsvp-form.component';
 import { SubmittingComponent } from './core/forms/submitting.component';
+import { UpdateEventComponent } from './pages/admin/update-event/update-event.component';
+import { UtilsService } from './core/utils.service';
 
 @NgModule({
   declarations: [
@@ -43,14 +40,18 @@ import { SubmittingComponent } from './core/forms/submitting.component';
     EventDetailComponent,
     RsvpComponent,
     RsvpFormComponent,
-    SubmittingComponent
+    SubmittingComponent,
+    CreateEventComponent,
+    UpdateEventComponent,
+    EventFormComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     Title,
