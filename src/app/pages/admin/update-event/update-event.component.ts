@@ -1,12 +1,13 @@
 // src/app/pages/admin/update-event/update-event.component.ts
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { AuthService } from './../../../auth/auth.service';
-import { ApiService } from './../../../core/api.service';
-import { UtilsService } from './../../../core/utils.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
+import { ApiService } from './../../../core/api.service';
+import { AuthService } from './../../../auth/auth.service';
 import { EventModel } from './../../../core/models/event.model';
+import { Subscription } from 'rxjs/Subscription';
+import { Title } from '@angular/platform-browser';
+import { UtilsService } from './../../../core/utils.service';
 
 @Component({
   selector: 'app-update-event',

@@ -1,12 +1,12 @@
 // src/app/pages/event/rsvp/rsvp.component.ts
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
-import { AuthService } from './../../../auth/auth.service';
 import { ApiService } from './../../../core/api.service';
-import { UtilsService } from './../../../core/utils.service';
+import { AuthService } from './../../../auth/auth.service';
 import { FilterSortService } from './../../../core/filter-sort.service';
 import { RsvpModel } from './../../../core/models/rsvp.model';
+import { Subscription } from 'rxjs/Subscription';
+import { UtilsService } from './../../../core/utils.service';
 import { expandCollapse } from './../../../core/expand-collapse.animation';
 
 @Component({

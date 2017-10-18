@@ -51,7 +51,7 @@ import { UtilsService } from './core/utils.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, BrowserAnimationsModule
   ],
   providers: [
     Title,

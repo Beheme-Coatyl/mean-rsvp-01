@@ -1,18 +1,16 @@
 // src/app/app-routing.module.ts
 
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { CallbackComponent } from './pages/callback/callback.component';
+import { RouterModule, Routes } from '@angular/router';
 
-import { AuthGuard } from './auth/auth.guard';
-import { AdminGuard } from './auth/admin.guard';
-
-import { EventComponent } from './pages/event/event.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { AdminGuard } from './auth/admin.guard';
+import { AuthGuard } from './auth/auth.guard';
+import { CallbackComponent } from './pages/callback/callback.component';
 import { CreateEventComponent } from './pages/admin/create-event/create-event.component';
+import { EventComponent } from './pages/event/event.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NgModule } from '@angular/core';
 import { UpdateEventComponent } from './pages/admin/update-event/update-event.component';
-
 
 const routes: Routes = [
   {

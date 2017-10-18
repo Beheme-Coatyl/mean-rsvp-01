@@ -111,7 +111,7 @@ export class EventFormComponent implements OnInit, OnDestroy {
         endDate: [this.formEvent.endDate, [
           Validators.required,
           Validators.maxLength(this.ef.dateMax),
-          Validators.pattern(TIME_REGEX),
+          Validators.pattern(DATE_REGEX),
           dateValidator()
         ]],
         endTime: [this.formEvent.endTime, [
