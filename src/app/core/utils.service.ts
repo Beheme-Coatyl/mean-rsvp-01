@@ -1,6 +1,6 @@
+import { DatePipe } from '@angular/common';
 // src/app/core/utils.service.ts
 import { Injectable } from '@angular/core';
-import { DatePipe } from '@angular/common';
 
 @Injectable()
 export class UtilsService {
@@ -68,6 +68,11 @@ export class UtilsService {
   booleanToText(bool: boolean): string {
     // Change a boolean to 'Yes' or 'No' string
     return bool ? 'Yes' : 'No';
+  }
+
+  capitalize(str: string): string {
+    // Capitalize first letter of string
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
 }

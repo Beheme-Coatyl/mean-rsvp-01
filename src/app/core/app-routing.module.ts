@@ -1,16 +1,18 @@
-// src/app/app-routing.module.ts
+// OLD: src/app/app-routing.module.ts
+//      src/app/core/app-routing.module.ts
 
 import { RouterModule, Routes } from '@angular/router';
 
-import { AdminComponent } from './pages/admin/admin.component';
-import { AdminGuard } from './auth/admin.guard';
-import { AuthGuard } from './auth/auth.guard';
-import { CallbackComponent } from './pages/callback/callback.component';
-import { CreateEventComponent } from './pages/admin/create-event/create-event.component';
-import { EventComponent } from './pages/event/event.component';
-import { HomeComponent } from './pages/home/home.component';
+import { AdminComponent } from '../pages/admin/admin.component';
+import { AdminGuard } from '../auth/admin.guard';
+import { AuthGuard } from '../auth/auth.guard';
+import { CallbackComponent } from '../pages/callback/callback.component';
+import { CreateEventComponent } from '../pages/admin/create-event/create-event.component';
+import { EventComponent } from '../pages/event/event.component';
+import { HomeComponent } from '../pages/home/home.component';
+import { MyRsvpsComponent } from '../pages/my-rsvps/my-rsvps.component';
 import { NgModule } from '@angular/core';
-import { UpdateEventComponent } from './pages/admin/update-event/update-event.component';
+import { UpdateEventComponent } from '../pages/admin/update-event/update-event.component';
 
 const routes: Routes = [
   {
@@ -45,6 +47,13 @@ const routes: Routes = [
   {
     path: 'event/:id',
     component: EventComponent,
+    canActivate: [
+      AuthGuard
+    ]
+  },
+  {
+    path: 'my-rsvps',
+    component: MyRsvpsComponent,
     canActivate: [
       AuthGuard
     ]

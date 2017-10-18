@@ -1,11 +1,13 @@
-// src/app/core/api.service.ts
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { AuthService } from './../auth/auth.service';
-import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/catch';
+
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+
+import { AuthService } from './../auth/auth.service';
 import { ENV } from './env.config';
 import { EventModel } from './models/event.model';
+// src/app/core/api.service.ts
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 import { RsvpModel } from './models/rsvp.model';
 
 @Injectable()
@@ -101,6 +103,15 @@ export class ApiService {
   deleteEvent$(id: string): Observable<any> {
     return this.http
       .delete(`${ENV.BASE_API}event/${id}`, {
+        headers: new HttpHeaders().set('Authorization', this._authHeader)
+      })
+      .catch(this._handleError);
+  }
+
+  // GET all events a specific user has RSVPed to (login required)
+  getUserEvents$(userId: string): Observable<EventModel[]> {
+    return this.http
+      .get(`${ENV.BASE_API}events/${userId}`, {
         headers: new HttpHeaders().set('Authorization', this._authHeader)
       })
       .catch(this._handleError);
